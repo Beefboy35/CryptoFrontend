@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.crypto-background {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+
+.loading {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0 ,0, 0.7);
+    color: white;
+    font-size: 50px;
+    z-index: 10;
+}
+
+.loading-content {
+    font-family: "Baskerville Old Face", cursive;
+}
+.loading-dots {
+    animation: loading-dots 0.5s infinite;
+    opacity: 0;
+    display: inline-block;
+}
+
+.loading-dots:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.loading-dots:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.loading-dots:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+
+@keyframes loading-dots {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.card {
+    display: grid;
+    grid-auto-rows: 50px 50px;
+    max-width: 400px;
+    height: auto;
+    position: fixed;
+    left: 45%;
+    top: 35%;
+    border: black 1px solid;
+    border-radius: 15px;
+    padding: 5px 10px;
+    background: linear-gradient(to bottom right, #eaab7b, #c35d14);
+}
+#close-card {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+
+#close-card:hover {
+    text-shadow: black 1px 1px 1px;
+}
+
+.crypto-icon {
+    height: 40px;
+    width: 40px;
+    float: left;
+    position: absolute;
+    margin: 5px 10px;
+}
+
+
+@keyframes color-shadow {
+    0% {
+        box-shadow: 1px 3px 5px 1px rgba(6, 36, 67, 0.58);
+    }
+    33% {
+        box-shadow: 1px 3px 5px 1px rgba(4, 69, 90, 0.6);
+    }
+    66% {
+        box-shadow: 1px 3px 5px 1px rgba(0, 199, 205, 0.66);
+    }
+    100% {
+        box-shadow: 1px 3px 5px 1px rgba(5, 96, 108, 0.6);
+    }
+}
+.crypto-item {
+    box-shadow: 0 0 1px 0 rgba(5, 17, 51, 0.6);
+    animation: color-shadow 1.5s infinite linear;
+    border: black 1px solid;
+    margin: 10px;
+    width: auto;
+    padding: 2px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    border-radius: 10px/15px;
+    overflow: hidden;
+}
+
+.crypto-item:hover {
+    animation: none;
+    border: black 3px solid;
+    cursor: pointer;
+}
+
+h4:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.crypto-list {
+    margin-top: -10px;
+    margin-bottom: -10px;
+    min-height: 20100px;
+    width: 340px;
+    background: linear-gradient(to bottom right, #eaab7b, #c35d14);
+    border-right: 1px solid #999;
+
+}
+

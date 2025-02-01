@@ -1,0 +1,145 @@
+.form {
+    margin: 0 0 0 400px;
+    transform: translateY(-65px);
+    transition: transform 0.5s ease-in-out, background 0.7s ease-in-out;
+    position: fixed;
+    align-content: flex-end;
+    width: 320px;
+    height: 85px;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+.form:hover  {
+    transform: translateY(-10px);
+    background: linear-gradient(to bottom, rgb(62, 113, 154), rgba(11, 53, 83, 0.7));
+    border: 2px solid white;
+}
+
+
+.form:hover .arrow-pointer {
+    opacity: 0;
+}
+
+.arrow-pointer {
+    opacity: 1;
+    display: flex;
+
+    justify-content: center;
+    width: 80%;
+    color: #102670;
+    transition: opacity 0.5s ease-in-out;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-left: 23px;
+}
+.arrow-part {
+    border-radius: 10px;
+    animation: glow 2.2s ease-in-out infinite;
+}
+
+.arrow-part:nth-child(1) {
+    animation-delay: 0s;
+}
+.arrow-part:nth-child(2) {
+    animation-delay: 0.3s;
+}
+.arrow-part:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.arrow-part:nth-child(4) {
+    animation-delay: 0.9s;
+}
+.arrow-part:nth-child(5) {
+    animation-delay: 1.2s;
+}
+.arrow-part:nth-child(6) {
+    animation-delay: 1.5s;
+}
+.arrow-part:nth-child(7) {
+    animation-delay: 1.8s;
+}
+.arrow-part:nth-child(8) {
+    animation-delay: 2.1s;
+}
+
+
+.arrow-part {
+    margin-left: 2px;
+
+}
+@keyframes glow {
+    0% {
+        background-color: #78fff9;
+    }
+    50% {
+        background-color: #336fd1;
+    }
+    100% {
+        background-color: #08b6bc;
+    }
+}
+
+.submit {
+    margin: 3px;
+    padding: 7px 12px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+}
+.submit::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+/* glow */
+.submit::before  {
+    content: "";
+    background: linear-gradient(
+            45deg,
+            #FF0000, #FF7300, #FFFB00, #48FF00,
+            #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+@keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+
+/* hover */
+.submit:hover:before {
+    opacity: 1;
+}
+
+.submit:active:after {
+    background: transparent;
+}
+
+.submit:active {
+    color: #000;
+    font-weight: bold;
+}
